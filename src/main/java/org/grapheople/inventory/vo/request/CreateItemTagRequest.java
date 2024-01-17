@@ -3,15 +3,12 @@ package org.grapheople.inventory.vo.request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
+import org.grapheople.inventory.enums.ItemPropertyType;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateItemRequest {
+public class CreateItemTagRequest {
+    private Long itemId;
     private String name;
-    private String description;
-    private List<CreateItemPropertyRequest> propertyList;
-    private List<CreateItemTagRequest> tagList;
 }

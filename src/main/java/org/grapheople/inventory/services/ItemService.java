@@ -3,6 +3,8 @@ package org.grapheople.inventory.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.grapheople.inventory.entities.Item;
+import org.grapheople.inventory.entities.ItemProperty;
+import org.grapheople.inventory.entities.ItemTag;
 import org.grapheople.inventory.repositories.ItemRepository;
 import org.grapheople.inventory.vo.request.CreateItemRequest;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,20 @@ public class ItemService {
         item.setDescription(request.getDescription());
         item.setName(request.getName());
         item.setUserId(userId);
+        item.setPropertyList(
+                request.getPropertyList().stream().map(property -> {
+                    ItemProperty itemProperty = new ItemProperty();
+                    itemProperty.setPropertyType(property.getPropertyType());
+                    itemProperty.setName(property.getName());
+                    itemProperty.setContent(property.getContent());
+                    return itemProperty;
+                }).toList());
+        item.setTagList(
+                request.getTagList().stream().map(tag -> {
+                    ItemTag itemTag = new ItemTag();
+                    itemTag.setName(tag.getName());
+                    return itemTag;
+                }).toList());
         return itemRepository.save(item);
     }
 }
