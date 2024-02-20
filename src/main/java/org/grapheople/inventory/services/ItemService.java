@@ -21,6 +21,10 @@ public class ItemService {
         return itemRepository.findAll();
     }
 
+    public Item getItem(Long id) {
+        return itemRepository.findById(id).orElse(null);
+    }
+
     public Item createItem(Long userId, CreateItemRequest request) {
         Item item = new Item();
         item.setDescription(request.getDescription());
