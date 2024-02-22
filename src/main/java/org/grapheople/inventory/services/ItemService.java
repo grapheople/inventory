@@ -2,9 +2,9 @@ package org.grapheople.inventory.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.grapheople.inventory.entities.Item;
-import org.grapheople.inventory.entities.ItemProperty;
-import org.grapheople.inventory.entities.ItemTag;
+import org.grapheople.inventory.entities.item.Item;
+import org.grapheople.inventory.entities.item.ItemProperty;
+import org.grapheople.inventory.entities.item.ItemTag;
 import org.grapheople.inventory.repositories.ItemRepository;
 import org.grapheople.inventory.vo.request.CreateItemRequest;
 import org.springframework.stereotype.Service;

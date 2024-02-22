@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public enum ItemPropertyType {
+public enum PropertyType {
     LINK("링크"),
     PLAIN_TEXT("텍스트"),
     IMAGE("이미지"),

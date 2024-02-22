@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/web/item")
-public class WebItemController {
+@RequestMapping("/web/inventory")
+public class WebInventoryController {
     private final ItemService itemService;
-    @RequestMapping({"/", ""})
+    @RequestMapping( "")
     public String item(Model model) {
         model.addAttribute("items", itemService.getItems());
-        return "/item/item_home";
+        return "/item/inventory_home";
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/items/{id}")
     public String itemDetail(@PathVariable Long id, Model model) {
         model.addAttribute("item", itemService.getItem(id));
         return "/item/item_detail";

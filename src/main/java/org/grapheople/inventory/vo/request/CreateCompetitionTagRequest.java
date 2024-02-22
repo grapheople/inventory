@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateItemTagRequest {
+public class CreateCompetitionTagRequest {
     private String name;
 }

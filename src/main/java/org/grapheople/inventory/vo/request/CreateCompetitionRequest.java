@@ -9,9 +9,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateItemRequest {
+public class CreateCompetitionRequest {
+    private Long companyId;
     private String name;
     private String description;
     private List<CreatePropertyRequest> propertyList;
-    private List<CreateItemTagRequest> tagList;
+    private List<CreateCompetitionTagRequest> tagList;
 }

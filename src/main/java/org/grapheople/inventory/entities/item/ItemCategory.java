@@ -1,10 +1,11 @@
-package org.grapheople.inventory.entities;
+package org.grapheople.inventory.entities.item;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.grapheople.inventory.entities.BaseEntity;
 import org.hibernate.annotations.ColumnDefault;
 
 @EqualsAndHashCode(callSuper = true)

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Boot Thymeleaf Example</title>
-</head>
-<body>
-<h1>${message}</h1>
-</body>
+    <head>
+        <#include "/common/head.ftl">
+    </head>
+    <body>
+        <#include "/common/nav.ftl">
+        <span class="txt1"><span>어떤 영양제</span>를 찾으세요?</span>
+    </body>
 </html>

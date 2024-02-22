@@ -1,4 +1,4 @@
-package org.grapheople.inventory.entities;
+package org.grapheople.inventory.entities.competition;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,12 +9,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "item_tag")
-public class ItemTag {
+@Table(name = "competition_tag")
+public class CompetitionTag {
     @Id
     @Column(name = "id", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long itemId;
+    private Long competitionId;
     private String name;
 }

@@ -3,7 +3,7 @@ package org.grapheople.inventory.controllers.api;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.grapheople.inventory.common.ApiResult;
-import org.grapheople.inventory.entities.Item;
+import org.grapheople.inventory.entities.item.Item;
 import org.grapheople.inventory.services.ItemService;
 import org.grapheople.inventory.vo.request.CreateItemRequest;
 import org.springframework.http.ResponseEntity;
