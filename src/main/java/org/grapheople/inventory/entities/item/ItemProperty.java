@@ -23,4 +23,9 @@ public class ItemProperty {
     private String name;
     private String content;
 
+    public ItemProperty(PropertyType propertyType, String name, String content) {
+        this.propertyType = propertyType;
+        this.name = name;
+        this.content = content;
+    }
 }

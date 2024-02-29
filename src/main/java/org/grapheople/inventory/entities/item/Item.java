@@ -32,4 +32,8 @@ public class Item extends BaseEntity {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "itemId")
     private List<ItemTag> tagList;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "parentId")
+    private List<Item> componentList;
 }

@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.grapheople.inventory.entities.item.Item;
 import org.grapheople.inventory.entities.item.ItemProperty;
 import org.grapheople.inventory.entities.item.ItemTag;
+import org.grapheople.inventory.enums.PropertyType;
 import org.grapheople.inventory.repositories.ItemRepository;
 import org.grapheople.inventory.vo.request.CreateItemRequest;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,14 @@ public class ItemService {
                     itemTag.setName(tag.getName());
                     return itemTag;
                 }).toList());
+
+        Item componentItem = new Item();
+        componentItem.setDescription("component item");
+        componentItem.setName("component item");
+        componentItem.setUserId(userId);
+        componentItem.setPropertyList(
+                List.of(new ItemProperty(PropertyType.PLAIN_TEXT, "component property", "component content")));
+        item.setComponentList(List.of(componentItem));
         return itemRepository.save(item);
     }
 }
