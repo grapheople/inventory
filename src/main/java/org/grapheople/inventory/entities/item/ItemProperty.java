@@ -4,7 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.grapheople.inventory.enums.PropertyType;
+import org.grapheople.inventory.enums.ItemPropertyDataType;
+import org.grapheople.inventory.enums.ItemPropertyType;
 
 @Data
 @Entity
@@ -19,12 +20,15 @@ public class ItemProperty {
 
     private Long itemId;
     @Enumerated(EnumType.STRING)
-    private PropertyType propertyType;
+    private ItemPropertyType itemPropertyType;
+    @Enumerated(EnumType.STRING)
+    private ItemPropertyDataType propertyDataType;
     private String name;
     private String content;
 
-    public ItemProperty(PropertyType propertyType, String name, String content) {
-        this.propertyType = propertyType;
+    public ItemProperty(ItemPropertyType itemPropertyType, ItemPropertyDataType itemPropertyDataType, String name, String content) {
+        this.itemPropertyType = itemPropertyType;
+        this.propertyDataType = itemPropertyDataType;
         this.name = name;
         this.content = content;
     }

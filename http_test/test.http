@@ -11,12 +11,12 @@ Content-Type: application/json
   "description": "test description",
   "propertyList": [
     {
-      "propertyType": "PLAIN_TEXT",
+      "itemPropertyType": "PLAIN_TEXT",
       "name": "test property name",
       "value": "test property value"
     },
     {
-      "propertyType": "PLAIN_TEXT",
+      "itemPropertyType": "PLAIN_TEXT",
       "name": "test2 property name",
       "value": "test2 property value"
     }

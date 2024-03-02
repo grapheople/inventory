@@ -9,8 +9,6 @@ import org.grapheople.inventory.repositories.CompetitionRepository;
 import org.grapheople.inventory.vo.request.CreateCompetitionRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.stream.Collectors;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -24,7 +22,7 @@ public class CompetitionService {
         competition.setDescription(request.getDescription());
         competition.setPropertyList(request.getPropertyList().stream().map(property -> {
             CompetitionProperty competitionProperty = new CompetitionProperty();
-            competitionProperty.setPropertyType(property.getPropertyType());
+            competitionProperty.setItemPropertyType(property.getItemPropertyType());
             competitionProperty.setName(property.getName());
             competitionProperty.setContent(property.getContent());
             return competitionProperty;

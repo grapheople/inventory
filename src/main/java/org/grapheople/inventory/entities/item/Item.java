@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.grapheople.inventory.converter.StringListConverter;
 import org.grapheople.inventory.entities.BaseEntity;
 
 import java.util.List;
@@ -20,6 +21,9 @@ public class Item extends BaseEntity {
     @Column(name = "id", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Convert(converter = StringListConverter.class)
+    private List<String> imageList;
 
     private String name;
     private String description;

@@ -5,7 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.grapheople.inventory.entities.item.Item;
 import org.grapheople.inventory.entities.item.ItemProperty;
 import org.grapheople.inventory.entities.item.ItemTag;
-import org.grapheople.inventory.enums.PropertyType;
+import org.grapheople.inventory.enums.ItemPropertyDataType;
+import org.grapheople.inventory.enums.ItemPropertyType;
 import org.grapheople.inventory.repositories.ItemRepository;
 import org.grapheople.inventory.vo.request.CreateItemRequest;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class ItemService {
         item.setPropertyList(
                 request.getPropertyList().stream().map(property -> {
                     ItemProperty itemProperty = new ItemProperty();
-                    itemProperty.setPropertyType(property.getPropertyType());
+                    itemProperty.setItemPropertyType(property.getItemPropertyType());
                     itemProperty.setName(property.getName());
                     itemProperty.setContent(property.getContent());
                     return itemProperty;
@@ -51,7 +52,7 @@ public class ItemService {
         componentItem.setName("component item");
         componentItem.setUserId(userId);
         componentItem.setPropertyList(
-                List.of(new ItemProperty(PropertyType.PLAIN_TEXT, "component property", "component content")));
+                List.of(new ItemProperty(ItemPropertyType.RECEIPT, ItemPropertyDataType.PLAIN_TEXT, "component property", "component content")));
         item.setComponentList(List.of(componentItem));
         return itemRepository.save(item);
     }

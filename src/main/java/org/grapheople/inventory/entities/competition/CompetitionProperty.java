@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.grapheople.inventory.enums.PropertyType;
+import org.grapheople.inventory.enums.ItemPropertyType;
 
 @Data
 @Entity
@@ -19,7 +19,7 @@ public class CompetitionProperty {
 
     private Long itemId;
     @Enumerated(EnumType.STRING)
-    private PropertyType propertyType;
+    private ItemPropertyType itemPropertyType;
     private String name;
     private String content;
 
