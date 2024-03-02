@@ -29,6 +29,7 @@ public class ItemService {
 
     public Item createItem(Long userId, CreateItemRequest request) {
         Item item = new Item();
+        item.setImageList(request.getImageList());
         item.setDescription(request.getDescription());
         item.setName(request.getName());
         item.setUserId(userId);
@@ -36,6 +37,7 @@ public class ItemService {
                 request.getPropertyList().stream().map(property -> {
                     ItemProperty itemProperty = new ItemProperty();
                     itemProperty.setItemPropertyType(property.getItemPropertyType());
+                    itemProperty.setPropertyDataType(property.getPropertyDataType());
                     itemProperty.setName(property.getName());
                     itemProperty.setContent(property.getContent());
                     return itemProperty;
@@ -47,13 +49,13 @@ public class ItemService {
                     return itemTag;
                 }).toList());
 
-        Item componentItem = new Item();
-        componentItem.setDescription("component item");
-        componentItem.setName("component item");
-        componentItem.setUserId(userId);
-        componentItem.setPropertyList(
-                List.of(new ItemProperty(ItemPropertyType.RECEIPT, ItemPropertyDataType.PLAIN_TEXT, "component property", "component content")));
-        item.setComponentList(List.of(componentItem));
+        if (request.getParentId() != null) {
+            itemRepository.findById(request.getParentId()).ifPresent(parentItem -> item.setParentId(parentItem.getParentId()));
+        }
+        if (request.getComponentList() != null && !request.getComponentList().isEmpty()) {
+            List<Item> componentList = itemRepository.findAllById(request.getComponentList());
+            item.setComponentList(componentList);
+        }
         return itemRepository.save(item);
     }
 }

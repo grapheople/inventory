@@ -12,6 +12,9 @@ import java.util.List;
 public class CreateItemRequest {
     private String name;
     private String description;
+    private List<String> imageList;
     private List<CreatePropertyRequest> propertyList;
     private List<CreateItemTagRequest> tagList;
+    private Long parentId;
+    private List<Long> componentList;
 }
