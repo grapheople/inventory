@@ -2,7 +2,7 @@ package org.grapheople.inmaroom.item.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.grapheople.inmaroom.enums.ItemPropertyType;
+import org.grapheople.inmaroom.item.enums.ItemPropertyType;
 import org.grapheople.inmaroom.item.entities.ItemProperty;
 
 @AllArgsConstructor

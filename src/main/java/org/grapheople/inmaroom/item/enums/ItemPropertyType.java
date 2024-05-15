@@ -1,4 +1,4 @@
-package org.grapheople.inmaroom.enums;
+package org.grapheople.inmaroom.item.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

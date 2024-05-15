@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.grapheople.inmaroom.converter.StringListConverter;
-import org.grapheople.inmaroom.entities.BaseEntity;
+import org.grapheople.inmaroom.common.BaseEntity;
 
 import java.util.List;
 

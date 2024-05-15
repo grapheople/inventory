@@ -1,11 +1,10 @@
-package org.grapheople.inmaroom.item.entities;
+package org.grapheople.inmaroom.club.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.grapheople.inmaroom.converter.StringListConverter;
 import org.grapheople.inmaroom.common.BaseEntity;
 
 import java.util.List;
@@ -15,17 +14,21 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "item_post")
-public class ItemPost extends BaseEntity {
+@Table(name = "article_comment")
+public class ArticleComment extends BaseEntity {
     @Id
     @Column(name = "id", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Convert(converter = StringListConverter.class)
-    private List<String> imageList;
-
+    private Long articleId;
+    private Long parentId;
     private Long userId;
-    private Long itemId;
+    private String toUserName;
+    private String writerName;
     private String content;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "parentId")
+    private List<ArticleComment> childCommentList;
 }

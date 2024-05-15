@@ -32,13 +32,13 @@ public class ItemApiController {
     }
 
     @PostMapping("")
-    public ResponseEntity<ApiResult<Item>> insertItem(@RequestBody CreateItemRequest request) {
+    public ResponseEntity<ApiResult<Item>> createItem(@RequestBody CreateItemRequest request) {
         Long testUserId = 1L;
         return ResponseEntity.ok(new ApiResult<>(itemService.createItem(testUserId, request)));
     }
 
     @PostMapping("/{id}/post")
-    public ResponseEntity<ApiResult<ItemPost>> insertItemPost(@PathVariable Long id, @RequestBody CreateItemPostRequest request) {
+    public ResponseEntity<ApiResult<ItemPost>> createItemPost(@PathVariable Long id, @RequestBody CreateItemPostRequest request) {
         Long testUserId = 1L;
         return ResponseEntity.ok(new ApiResult<>(itemService.createItemPost(testUserId, id, request)));
     }
