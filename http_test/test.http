@@ -1,9 +1,12 @@
 ###아이템 가져오기
-GET http://localhost:8080/api/item/
+GET http://localhost:8090/api/item
+
+###아이템 가져오기
+GET http://localhost:8090/api/item/1
 
 
 ###아이템 생성
-POST http://localhost:8080/api/item/
+POST http://localhost:8090/api/item
 Content-Type: application/json
 
 {
@@ -11,22 +14,28 @@ Content-Type: application/json
   "description": "test description",
   "propertyList": [
     {
-      "itemPropertyType": "PLAIN_TEXT",
-      "name": "test property name",
-      "value": "test property value"
+      "itemPropertyType": "SIZE",
+      "content": "XL"
     },
     {
-      "itemPropertyType": "PLAIN_TEXT",
-      "name": "test2 property name",
-      "value": "test2 property value"
+      "itemPropertyType": "PRICE",
+      "content": "1,000원"
     }
   ],
   "tagList": [
-    {
-      "name": "test tag name"
-    },
-    {
-      "name": "test2 tag name"
-    }
+    "test1",
+    "test2"
   ]
+}
+
+###아이템 포스팅
+POST http://localhost:8090/api/item/1/post
+Content-Type: application/json
+
+{
+  "imageList": [
+    "img1",
+    "img2"
+  ],
+  "content": "test content"
 }
