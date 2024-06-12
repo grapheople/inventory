@@ -1,0 +1,19 @@
+###대회 생성
+POST http://localhost:8080/api/competition
+Content-Type: application/json
+
+{
+  "name": "대회1",
+  "description": "대회1 설명",
+  "location": "대회1 장소",
+  "host": "대회1 주최자",
+  "hostCompany": "대회1 주최자 회사",
+  "support": "대회1 후원사",
+  "outline": "대회1 개요",
+  "recruitStartAt": "2021-10-01 00:00",
+  "recruitEndAt": "2021-10-01 00:00",
+  "refundEndAt": "2021-10-01 00:00",
+  "startAt": "2021-10-01 00:00",
+  "endAt": "2021-10-31 23:59",
+  "recruitCount": 10
+}
