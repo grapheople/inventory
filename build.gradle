@@ -34,8 +34,8 @@ dependencies {
     testImplementation 'org.projectlombok:lombok:1.18.30'
     compileOnly 'org.projectlombok:lombok'
     implementation 'org.mapstruct:mapstruct:1.4.2.Final' // 주의: lombok 뒤에 위치해야 함
-    runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'mysql:mysql-connector-java:8.0.33'
+
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final' // 주의: lombok 뒤에 위치해야 함
