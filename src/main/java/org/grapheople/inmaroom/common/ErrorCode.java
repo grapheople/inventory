@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatusCode;
 @Getter
 public enum ErrorCode {
     NOT_FOUND(HttpStatus.NOT_FOUND, 100001,"Not Found"),
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, 100002, "Internal Server Error"),
     ;
 
     private final HttpStatusCode code;

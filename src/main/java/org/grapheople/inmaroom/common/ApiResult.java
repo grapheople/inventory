@@ -15,12 +15,18 @@ public class ApiResult<T> {
 
     private T result;
 
-    private String errorCode;
+    private ErrorCode errorCode;
 
     private String errorMessage;
 
     public ApiResult(T result) {
         this.result = result;
         this.success = true; // default
+    }
+
+    public ApiResult(ErrorCode errorCode, String errorMessage) {
+        this.errorCode = errorCode;
+        this.errorMessage = errorMessage;
+        this.success = false;
     }
 }
